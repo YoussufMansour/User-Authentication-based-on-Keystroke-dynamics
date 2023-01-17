@@ -1,5 +1,6 @@
 # User-Authentication-based-on-Keystroke-dynamics
-Keystroke Dynamics User-authentication
+
+
 ## Introduction
 User authentication is being hackable by social engineering techniques, which is leading to the migration of authentication methods to biometric-based authentications.
 In this project, we developed a a deep learning Neural netowrk model and a demo of user authentication using keystroke dynamics by extracting features of the sequence of keystroke analytics and dynamics of user’s passwords logging into a system. 
@@ -17,19 +18,24 @@ The dataset contains three main features while typing the password for each key 
   <li>Up-Down time: The duration time between releasing a key and pressing the following key.
 </li>
 </ul>
-![This is an image](https://www.ms.sapientia.ro/~manyi/mobikey/images/keyboard2.jpg)
+
+
+ <img src= "images/keyboard2.jpg">
+
+
+
 ## Pre-Processing
 Having the dataset storing 34 features, only 31 got used, which were the keystroke dynamics, while dropping the user, lap, and session information, making the shape of the model (31,20800).
 After dropping unnecessary features, we used one-hot encoding for the data to select the highest probability of the detected user. Then we scaled our dataset features using standardization.
-We divided the dataset into 80-20% for training and testing, and while training, we used 20% of the training data for validation.
+We divided the dataset into 90-10% for training and testing, and while training, we used 15% of the training data for validation.
 
 
-## Models
-The first model was a vanilla neural network using Keras in TensorFlow, we are using adam optimizer for the loss function, and the model starts with 31 features as the input layer, in the 3 hidden layers we used rectified linear unit (ReLU), and sigmoid activation functions, and in the output layer, we used a SoftMax activation function to choose one of the 52 indicated users.
-The second model was a Long Short-Term Memory (LSTM) neural network, starting with 31 features as the input layer, and 3 hidden layers, which end in the output layer with the SoftMax activation function to choose one of the 52 indicated users (including one of us as an added user for testing purposes).
+## Model
+Our model is a vanilla neural network using Keras in TensorFlow, we are using cross-entropy for the loss function and adam for optimization, and the model starts with 31 features as the input layer, in the 3 hidden layers we used rectified linear unit (ReLU), and sigmoid activation functions, and in the output layer, we used a SoftMax activation function to choose one of the 52 indicated users.
+We also tested a Long Short-Term Memory (LSTM) neural network model, starting with 31 features as the input layer, and 3 hidden layers, which end in the output layer with the SoftMax activation function to choose one of the 52 indicated users (including one of us as an added user for testing purposes).
 
 
 
 ## Feature Extraction
 Our user interface extracts the three main features which were described in the dataset. These features are used as credentials for users to authenticate themselves.
-Later, we added a new user representing one of us for testing feature extraction and user authentication in the designed user interface (UI).
+Later, we added a new user representing one of us for testing feature extraction and user authentication in the designed user interface (UI) using our NN model.
