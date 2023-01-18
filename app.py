@@ -110,7 +110,7 @@ def on_submit():
         print(auth)
         print(np.argmax(auth))
         # Using a 0.75 probability as a thresh hold
-        if ((np.argmax(auth) == int(user[5:])) and np.max(auth) > 0.75):
+        if ((np.argmax(auth) == int(user[5:])) and np.max(auth) > 0.99):
             messagebox.showinfo("Login Successful", "Welcome Admin!")
         else:
             messagebox.showinfo("NOT Authenticated", "Try again!")
