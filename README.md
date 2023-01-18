@@ -53,7 +53,7 @@ Later, we added a new user representing one of us for testing feature extraction
 <ul>
   <li>The username should start with "admin" and then the number of the user (ex:admin22)
 </li>
-  <li>The password (.tie5Ronal) should be typed directly without backspaces in the middle 
+  <li>The password (.tie5Ronal) should be typed directly without backspaces in the middle and is should end by clicking Enter
 </li>
   <li>The capital R in the password should by typed with Shift
 </li>
