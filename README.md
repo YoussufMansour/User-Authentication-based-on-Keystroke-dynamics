@@ -34,6 +34,15 @@ We divided the dataset into 90-10% for training and testing, and while training,
 Our model is a vanilla neural network using Keras in TensorFlow, we are using cross-entropy for the loss function and adam for optimization, and the model starts with 31 features as the input layer, in the 3 hidden layers we used rectified linear unit (ReLU), and sigmoid activation functions, and in the output layer, we used a SoftMax activation function to choose one of the 52 indicated users.
 We also tested a Long Short-Term Memory (LSTM) neural network model, starting with 31 features as the input layer, and 3 hidden layers, which end in the output layer with the SoftMax activation function to choose one of the 52 indicated users (including one of us as an added user for testing purposes).
 
+## Results
+| Attempt | #NN    | #LSTM    |
+| :-----: | :---: | :---: |
+| Accuracy | 93.9   | 92.5   |
+| Precision | 94.7   | 93.2   |
+| Recall | 93.3   | 92.11   |
+| F1-score | 94.0   | 92.64   |
+
+
 
 
 ## Feature Extraction
