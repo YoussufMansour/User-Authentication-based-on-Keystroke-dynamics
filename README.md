@@ -39,3 +39,10 @@ We also tested a Long Short-Term Memory (LSTM) neural network model, starting wi
 ## Feature Extraction
 Our user interface extracts the three main features which were described in the dataset. These features are used as credentials for users to authenticate themselves.
 Later, we added a new user representing one of us for testing feature extraction and user authentication in the designed user interface (UI) using our NN model.
+
+## Refrences
+<ul>
+  <li>https://www.cs.cmu.edu/~keystroke/#ref1
+</li>
+  <li>https://www.ms.sapientia.ro/~manyi/mobikey.html
+</ul>
