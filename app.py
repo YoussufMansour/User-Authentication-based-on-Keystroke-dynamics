@@ -44,14 +44,13 @@ def on_key_release(key):
 
 def on_password_focus(event):
     global listener, features, hold, up_down, down_down, key_press_times, key_release_times
-    # clearing all lists for a new entry
-    key_press_times.clear()
-    key_release_times.clear()
-    features = []
+    # Clearing everything
+    features.clear()
     hold.clear()
     up_down.clear()
     down_down.clear()
-    features.clear()
+    key_press_times.clear()
+    key_release_times.clear()    
     # Defining a keyboard listener that uses the function of press and release
     listener = keyboard.Listener(
         on_press=on_key_press, on_release=on_key_release)
@@ -59,15 +58,12 @@ def on_password_focus(event):
     print("started extracting")
 
 # A function that is called when the users presses enter
-
-
 def on_password_return(event):
     # Waits 2 seconds and stops the listener
     time.sleep(2)
     listener.stop()
     print("DONE")
     global features, hold, up_down, down_down, key_press_times, key_release_times
-
 # Calculating the the necessary features by using the press and release lists
     for i in range(len(key_press_times)):
         # in those if conditions the expected Shift is handled
@@ -98,15 +94,14 @@ def on_password_return(event):
 def on_submit():
     global features, hold, up_down, down_down
     username.focus_set()
-    print(features)
     user = username.get()
     # User names should start with admin and then number  of the user
     # Also the features should be 31 length
     if user[:5] == "admin" and password.get() == ".tie5Ronal" and len(features) == 31:
         # Converting the list to array and applying standardization
-        features = np.array(features)
-        features = Standard_Scaler.transform(features.reshape(1, -1))
-        auth = loaded_model.predict(features)
+        features_arr = np.array(features)
+        features_arr = Standard_Scaler.transform(features_arr.reshape(1, -1))
+        auth = loaded_model.predict(features_arr)
         print(auth)
         print(np.argmax(auth))
         # Using a 0.75 probability as a thresh hold
@@ -117,7 +112,7 @@ def on_submit():
     else:
         messagebox.showerror(
             "Login Failed", "Invalid username, password,or order")
-    # Clearing everything
+    
     username.delete(0, END)
     password.delete(0, END)
 
