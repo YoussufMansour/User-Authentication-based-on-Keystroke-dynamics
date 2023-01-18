@@ -51,7 +51,7 @@ Later, we added a new user representing one of us for testing feature extraction
 
 ## Instructions before testing the UI
 <ul>
-  <li>The username should start with "admin" and them the number of user (ex:admin22)
+  <li>The username should start with "admin" and then the number of the user (ex:admin22)
 </li>
   <li>The password (.tie5Ronal) should be typed directly without backspaces in the middle 
 </li>
