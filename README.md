@@ -49,6 +49,19 @@ We also tested a Long Short-Term Memory (LSTM) neural network model, starting wi
 Our user interface extracts the three main features which were described in the dataset. These features are used as credentials for users to authenticate themselves.
 Later, we added a new user representing one of us for testing feature extraction and user authentication in the designed user interface (UI) using our NN model.
 
+## Instructions before testing the UI
+<ul>
+  <li>The username should start with "admin" and them the number of user (ex:admin22)
+</li>
+  <li>The password (.tie5Ronal) should be typed directly without backspaces in the middle 
+</li>
+  <li>The capital R in the password should by typed with Shift
+</li>
+</li>
+  <li>Dont forget to download necessary libraries and (h5py) should'nt be downloaded with conda due to the compatibility of the version
+</li>
+</ul>
+
 ## Refrences
 <ul>
   <li>https://www.cs.cmu.edu/~keystroke/#ref1
